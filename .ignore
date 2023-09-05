@@ -1,0 +1,154 @@
+const path = require("path")
+const fs = require("fs")
+
+const htmlContent = `<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Client</title>
+    </head>
+    <body>
+        <h1>Clients</h1>
+    </body>
+</html>`
+
+fs.writeFile("index.html", htmlContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File html created successfully!")
+})
+
+const cssContent = `body {
+    background-color : coral;
+}`
+
+fs.writeFile("style.css", cssContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File css created successfully!")
+})
+
+/// CONTACT FOLDER ///
+fs.mkdir(`${process.cwd()}/contact`, { recursive: true }, (err) => {
+  if (err) throw err
+
+  console.log("Folder contact created successfully!")
+})
+
+const htmlContactContent = `<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="contact/style.css" />
+        <title>Contact</title>
+    </head>
+    <body>
+        <h1>Contact</h1>
+    </body>
+</html>`
+
+fs.writeFile(
+  `${process.cwd()}/contact/index.html`,
+  htmlContactContent,
+  (err) => {
+    if (err) {
+      throw err
+    }
+
+    process.stdout.write("File contact index.html created successfully!")
+  }
+)
+
+const cssContactContent = `body {
+    background-color : blue;
+}`
+
+fs.writeFile(`${process.cwd()}/contact/style.css`, cssContactContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File contact style.css created successfully!")
+})
+
+/// ABOUT FOLDER ///
+fs.mkdir(`${process.cwd()}/about`, { recursive: true }, (err) => {
+  if (err) throw err
+  console.log("Folder About created successfully!")
+})
+
+const htmlAboutContent = `<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="about/style.css" />
+        <title>About</title>
+    </head>
+    <body>
+        <h1>About</h1>
+    </body>
+</html>`
+
+fs.writeFile(`${process.cwd()}/about/index.html`, htmlAboutContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File contact index.html created successfully!")
+})
+
+const cssAboutContent = `body {
+    background-color : red;
+}`
+
+fs.writeFile(`${process.cwd()}/about/style.css`, cssContactContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File about style.css created successfully!")
+})
+
+/// BLOG FOLDER ///
+fs.mkdir(`${process.cwd()}/blog`, { recursive: true }, (err) => {
+  if (err) throw err
+
+  console.log("Folder Blog created successfully!")
+})
+
+const htmlBlogContent = `<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="blog/style.css" />
+        <title>Blog</title>
+    </head>
+    <body>
+        <h1>Blog</h1>
+    </body>
+</html>`
+
+fs.writeFile(`${process.cwd()}/blog/index.html`, htmlBlogContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File blog index.html created successfully!")
+})
+
+const cssBlogContent = `body {
+    background-color : green;
+}`
+
+fs.writeFile(`${process.cwd()}/blog/style.css`, cssBlogContent, (err) => {
+  if (err) {
+    throw err
+  }
+
+  process.stdout.write("File blog style.css created successfully!")
+})
